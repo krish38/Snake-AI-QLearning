@@ -12,3 +12,12 @@ The idea behind reinforcement learning, or specifically in this case, q-learning
 ![Q-learning Equation](https://www.kdnuggets.com/images/reinforcement-learning-fig2-666.jpg)
 
 ### Specific Details
+The state includes 8 boolean values:
+  - Is the food above the snake?
+  - Is the food to the right of the snake?
+  - Is the food below the snake?
+  - Is the food to the left the snake?
+  - Is the cell above the snake head dangerous?
+  - Is the cell to the right of the snake head dangerous?
+  - Is the cell below the snake head dangerous?
+  - Is the cell to the left of the snake head dangerous?
