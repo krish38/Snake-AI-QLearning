@@ -51,6 +51,7 @@ class Snake:
         self.score = 0
         self.reward = 0
         self.gameOver = False
+        self.lastFood = 0
     
     def moveSnake(self):
         # Move the snake
@@ -91,6 +92,8 @@ class Snake:
                 self.reward = -2
                 self.gameOver = True
                 return False
+        if self.lastFood > 25:
+            return False
         return True
     
     def checkFood(self):
@@ -98,6 +101,7 @@ class Snake:
             self.score += 1
             self.reward = 5
             self.body.append([0,0])
+            self.lastFood = 0
 
             foodInBody = True
             while foodInBody:
@@ -116,6 +120,7 @@ class Snake:
         self.score = 0
         self.reward = 0
         self.gameOver = False
+        self.lastFood = 0
 
     def refreshWindow(self):
         win.fill(white)
@@ -181,7 +186,7 @@ s = Snake()
 for episode in range(episodes):
     s.resetBoard()
     state = s.getState()
-    
+
     done = False 
     while not done:
         if random.uniform(0,1) > epsilon:
