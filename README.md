@@ -12,6 +12,7 @@ The idea behind reinforcement learning, or specifically in this case, q-learning
 ![Q-learning Equation](https://www.kdnuggets.com/images/reinforcement-learning-fig2-666.jpg)
 
 ### Specific Details
+#### State
 The state includes 8 boolean values:
   - Is the food above the snake?
   - Is the food to the right of the snake?
@@ -21,3 +22,10 @@ The state includes 8 boolean values:
   - Is the cell to the right of the snake head dangerous?
   - Is the cell below the snake head dangerous?
   - Is the cell to the left of the snake head dangerous?
+For each state, there are 4 possible actions the snake can make. It can either go up, right, down, or left.
+
+#### Reward
+- Eating food: 5
+- Dying: -2
+- Heading toward food: 1
+- Idle movement: -1
