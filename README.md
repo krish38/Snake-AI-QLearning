@@ -7,6 +7,8 @@ Hard coding a game like this can be difficult because there is not a set path to
 
 ## Q-Learning
 ### How it works
-The idea behind reinforcement learning, or specifically in this case, q-learning, is that we can guide the agent by giving it a reward, or a punishment for certain actions. When the agent eats food, we can reward it, encourging similar actions in the future. Likewise, when the agent dies, we give it a negative reward, so that it does not repeat this action.
+The idea behind reinforcement learning, or specifically in this case, q-learning, is that we can guide the agent by giving it a reward, or a punishment for certain actions. When the agent eats food, we can reward it, encourging similar actions in the future. Likewise, when the agent dies, we give it a negative reward, so that it does not repeat this action. The agent makes its decisions from a table, known as a q-table. The q-table stores every possible state of the board (with the parameters we pass it), along with each action that can be made at that state. Each action at each state, is given a q-value, which is the expected reward for performing set action at set state. This q-table is updated as the agent trains in the environment using this equation:
+
+![Q-learning Equation](https://www.kdnuggets.com/images/reinforcement-learning-fig2-666.jpg)
 
 ### Specific Details
