@@ -29,3 +29,6 @@ For each state, there are 4 possible actions the snake can make. It can either g
 - Dying: -2
 - Heading toward food: 1
 - Idle movement: -1
+
+## How to use
+The user can choose to either train a new model from scratch, or load a pre-existing model. When run from scratch, the agent will be often make random actions, in attempt to explore the environment more. However, when a model is loaded in, it will make all it's decisions from the q-table.
