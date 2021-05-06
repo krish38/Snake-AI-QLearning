@@ -128,16 +128,10 @@ class Snake:
 
     def refreshWindow(self):
         win.fill(white)
-        x,y = 0,0
-        for i in range(rows):
-            x += rows 
-            y += rows 
-            pygame.draw.line(win, black, (x,0), (x,width))
-            pygame.draw.line(win, black, (0,y), (width,y))
         
         self.moveSnake()
-        for i in self.body:
-            pygame.draw.rect(win, black, (i[0], i[1], box, box))
+        for i in range(len(self.body)):
+            pygame.draw.rect(win, (int(200/len(self.body)*i),int(200/len(self.body)*i),int(200/len(self.body)*i)), (self.body[i][0], self.body[i][1], box, box))
         self.checkFood()
         pygame.draw.rect(win, red, (self.food[0], self.food[1], box, box))
         pygame.display.update()
