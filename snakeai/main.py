@@ -20,14 +20,14 @@ blue = (0,0,255)
 # AI Variables
 learnRate = 0.001
 discount = 0.8
-episodes = 2000
+episodes = 10000
 statsN = 10
 epsilon = 0.2
 
 # Q-Table
 readModel = input("Do you want to load a pre-existing model (y/n)? ")
 if readModel == "y":
-    Q = np.load("snakeai/savedModel.npy")
+    Q = np.load("snakeai/savedModel3.npy")
     epsilon = 0
     episodes = 100
 else:
@@ -92,7 +92,9 @@ class Snake:
                 self.reward = -2
                 self.gameOver = True
                 return False
-        if self.lastFood > 25:
+        if self.lastFood > 50:
+            self.reward = -2
+            self.gameOver = True
             return False
         return True
     
@@ -110,6 +112,8 @@ class Snake:
                 for i in self.body:
                     if self.food==i:
                         foodInBody=True
+        else:
+            self.lastFood += 1
     
     def resetBoard(self):
         self.x = box * random.randint(5,15)
@@ -225,4 +229,4 @@ if readModel == 'y':
 else:
     saveModel = input("Do you want to save this model (y/n)? ")
     if saveModel=="y":
-        np.save("snakeai/savedModel.npy", Q)
+        np.save("snakeai/savedModel3.npy", Q)
