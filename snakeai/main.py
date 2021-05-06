@@ -27,7 +27,7 @@ epsilon = 0.2
 # Q-Table
 readModel = input("Do you want to load a pre-existing model (y/n)? ")
 if readModel == "y":
-    Q = np.load("snakeai/savedModel3.npy")
+    Q = np.load("snakeai/savedModel.npy")
     epsilon = 0
     episodes = 100
 else:
@@ -229,4 +229,4 @@ if readModel == 'y':
 else:
     saveModel = input("Do you want to save this model (y/n)? ")
     if saveModel=="y":
-        np.save("snakeai/savedModel3.npy", Q)
+        np.save("snakeai/savedModel.npy", Q)
